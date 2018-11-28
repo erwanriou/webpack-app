@@ -1,1 +1,1 @@
-alert("Hello XAVI Word");
+require('./main.css');
