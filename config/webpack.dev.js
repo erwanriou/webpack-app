@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require("path")
 
 module.exports = {
   entry: {
@@ -18,12 +18,30 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
+        use: [{ loader: "style-loader" }, { loader: "css-loader" }]
+      },
+      {
+        test: /\.html$/,
         use: [
           {
-            loader: "style-loader"
+            loader: "file-loader",
+            options: { name: "[name].html" }
           },
+          { loader: "extract-loader" },
           {
-            loader: "css-loader"
+            loader: "html-loader",
+            options: {
+              attrs: ["img:src"]
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(jpg|gif|png)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: { name: "images/[name].[ext]" }
           }
         ]
       }
