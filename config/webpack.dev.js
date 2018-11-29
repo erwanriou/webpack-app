@@ -1,6 +1,6 @@
-const path = require("path");
-const webpack = require("webpack");
-const HTMLwebpackPlugin = require("html-webpack-plugin");
+const path = require("path")
+const webpack = require("webpack")
+const HTMLwebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
   entry: {
@@ -59,9 +59,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     new HTMLwebpackPlugin({
       template: "./src/index.html"
     })
   ]
-};
+}
